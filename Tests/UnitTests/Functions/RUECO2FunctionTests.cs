@@ -1,11 +1,10 @@
 using System;
-using APSIM.Core;
 using Models.Core;
 using Models.Functions.SupplyFunctions;
 using Models.Interfaces;
 using NUnit.Framework;
 
-namespace UnitTests.Functions.SupplyFunctions
+namespace UnitTests.Functions
 {
     [TestFixture]
     public class RUECO2FunctionTests
