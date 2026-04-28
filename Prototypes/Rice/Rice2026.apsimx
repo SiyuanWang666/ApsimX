@@ -1036,94 +1036,21 @@
                       "ResourceName": null,
                       "Children": [],
                       "Enabled": true,
-                      "ReadOnly": true
+                      "ReadOnly": false
                     },
                     {
-                      "$type": "Models.Functions.AddFunction, Models",
+                      "$type": "Models.Functions.Constant, Models",
+                      "FixedValue": 200.0,
+                      "Units": "oCd",
                       "Name": "Target",
                       "ResourceName": null,
-                      "Children": [
-                        {
-                          "$type": "Models.Functions.VariableReference, Models",
-                          "VariableName": "[Phenology].HeadEmergenceLongDayBase.FixedValue",
-                          "Name": "LongPpBase",
-                          "ResourceName": null,
-                          "Children": [],
-                          "Enabled": true,
-                          "ReadOnly": true
-                        },
-                        {
-                          "$type": "Models.Functions.MultiplyFunction, Models",
-                          "Name": "ShortPpExtension",
-                          "ResourceName": null,
-                          "Children": [
-                            {
-                              "$type": "Models.Functions.VariableReference, Models",
-                              "VariableName": "[Phenology].HeadEmergenceLongDayBase.FixedValue",
-                              "Name": "LongPpBase",
-                              "ResourceName": null,
-                              "Children": [],
-                              "Enabled": true,
-                              "ReadOnly": true
-                            },
-                            {
-                              "$type": "Models.Functions.VariableReference, Models",
-                              "VariableName": "[Phenology].HeadEmergencePpSensitivity.FixedValue",
-                              "Name": "PpSens",
-                              "ResourceName": null,
-                              "Children": [],
-                              "Enabled": true,
-                              "ReadOnly": true
-                            },
-                            {
-                              "$type": "Models.Functions.LinearInterpolationFunction, Models",
-                              "Name": "PpResponse",
-                              "ResourceName": null,
-                              "Children": [
-                                {
-                                  "$type": "Models.Functions.XYPairs, Models",
-                                  "X": [
-                                    6.0,
-                                    8.0,
-                                    20.0,
-                                    22.0
-                                  ],
-                                  "Y": [
-                                    1.0,
-                                    1.0,
-                                    0.0,
-                                    0.0
-                                  ],
-                                  "Name": "XYPairs",
-                                  "ResourceName": null,
-                                  "Children": [],
-                                  "Enabled": true,
-                                  "ReadOnly": true
-                                },
-                                {
-                                  "$type": "Models.Functions.VariableReference, Models",
-                                  "VariableName": "[Phenology].Photoperiod",
-                                  "Name": "XValue",
-                                  "ResourceName": null,
-                                  "Children": [],
-                                  "Enabled": true,
-                                  "ReadOnly": true
-                                }
-                              ],
-                              "Enabled": true,
-                              "ReadOnly": true
-                            }
-                          ],
-                          "Enabled": true,
-                          "ReadOnly": true
-                        }
-                      ],
+                      "Children": [],
                       "Enabled": true,
-                      "ReadOnly": true
+                      "ReadOnly": false
                     }
                   ],
                   "Enabled": true,
-                  "ReadOnly": true
+                  "ReadOnly": false
                 },
                 {
                   "$type": "Models.PMF.Phen.GenericPhase, Models",
@@ -1140,7 +1067,7 @@
                       "ResourceName": null,
                       "Children": [],
                       "Enabled": true,
-                      "ReadOnly": true
+                      "ReadOnly": false
                     },
                     {
                       "$type": "Models.Functions.Constant, Models",
@@ -1150,11 +1077,11 @@
                       "ResourceName": null,
                       "Children": [],
                       "Enabled": true,
-                      "ReadOnly": true
+                      "ReadOnly": false
                     }
                   ],
                   "Enabled": true,
-                  "ReadOnly": true
+                  "ReadOnly": false
                 },
                 {
                   "$type": "Models.PMF.Phen.GenericPhase, Models",
@@ -1682,7 +1609,7 @@
                           "ResourceName": null,
                           "Children": [],
                           "Enabled": true,
-                          "ReadOnly": true
+                          "ReadOnly": false
                         },
                         {
                           "$type": "Models.Memo, Models",
