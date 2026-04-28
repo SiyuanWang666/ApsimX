@@ -5332,7 +5332,7 @@
                                     },
                                     {
                                       "$type": "Models.Functions.Constant, Models",
-                                      "FixedValue": 2.0,
+                                      "FixedValue": 100.0,
                                       "Units": null,
                                       "Name": "Modifier",
                                       "ResourceName": null,
