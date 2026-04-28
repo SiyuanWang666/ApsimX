@@ -931,7 +931,7 @@
                   "ReadOnly": false
                 },
                 {
-                  "$type": "Models.PMF.Phen.VernalisationPhase, Models",
+                  "$type": "Models.PMF.Phen.GenericPhase, Models",
                   "Start": "Emergence",
                   "End": "EndJuvenile",
                   "IsEmerged": true,
@@ -939,9 +939,19 @@
                   "ResourceName": null,
                   "Children": [
                     {
-                      "$type": "Models.Memo, Models",
-                      "Text": "Progress through the vernalising phase is determined by the apparent expression of Vrn1 and Vrn2 genes.  The CAMP model predicts the expression of these two genes.  \nVrn1 is the gene that orchestrates cold temperature responses in development.  To complete the vernalising stage firstly apparent Vrn1 expression must reach a value of at least 1.0.  In warm temperatures (>18oC), Vrn1 is expressed at a base rate that is genotype dependent.  This base rate is lower for vernalisation sensitive genotypes which will develop slower in the warm.  Vrn1 expression (relative to Haun stage increment) increases as temperature decreases so exposure to cold conditions will cause vernalisation sensitive varieties to develop faster (i.e. reach vernalisation at a lower Haun stage).  Vrn2 is up-regulated by longer photoperiods.  It blocks the expression of Vrn3 (which is required for progression through the spikelet differentiation phase) and must be down regulated completely before the vernalising phase is complete.  Vrn1 blocks Vrn2 expression so in effect the expression of Vrn2 raises the target for Vrn1 expression above 1.0.  The longer the photoperiod the greater the target increase so exposure to short days will reduce the target and length of the vernalising phase, a phenomena some times called short day vernalisation.  Vrn3 may also be active and accelerate the expression of Vrn1 during the vernalisation phase.  This effect is currently captured by VrnX in CAMP.  \nThe duration of the vernalising phase will be the result of a complex interaction between temperature, photoperiod and the genotypes tendency to express Vrn1 at warm temperatures (baseDeltaVrn1) and Vrn2 and Vrn3 under long photoperiods (MaxDpVrn2, MaxDVrnX).  These three rates are derived internally by the CAMP model from the genotypes FLNparams.",
-                      "Name": "Memo",
+                      "$type": "Models.Functions.VariableReference, Models",
+                      "VariableName": "[Phenology].ThermalTime",
+                      "Name": "Progression",
+                      "ResourceName": null,
+                      "Children": [],
+                      "Enabled": true,
+                      "ReadOnly": false
+                    },
+                    {
+                      "$type": "Models.Functions.Constant, Models",
+                      "FixedValue": 165.0,
+                      "Units": "oCd",
+                      "Name": "Target",
                       "ResourceName": null,
                       "Children": [],
                       "Enabled": true,
@@ -961,7 +971,7 @@
                   "Children": [
                     {
                       "$type": "Models.Functions.VariableReference, Models",
-                      "VariableName": "[Phenology].CAMP.dVrn",
+                      "VariableName": "[Phenology].ThermalTime",
                       "Name": "Progression",
                       "ResourceName": null,
                       "Children": [],
@@ -969,21 +979,36 @@
                       "ReadOnly": false
                     },
                     {
-                      "$type": "Models.Functions.Constant, Models",
-                      "FixedValue": 1.0,
-                      "Units": null,
+                      "$type": "Models.Functions.LinearInterpolationFunction, Models",
                       "Name": "Target",
                       "ResourceName": null,
-                      "Children": [],
-                      "Enabled": true,
-                      "ReadOnly": false
-                    },
-                    {
-                      "$type": "Models.Memo, Models",
-                      "Text": "Progress through the Spike differentiation phase is determined by the apparent expression of Vrn3 as predicted by CAMP.  \nVrn3 is a photoperiod sensitive gene that promotes expression of Vrn1.  Vrn1 is not able to express to adequate levels to achieve reproductive transition without Vrn3 upregulation.   Here we assume an apparent Vrn3 expression of 1.0 is sufficient to upregulate Vrn1 enough to trigger terminal spikelet.  \n Each genotype has a base rate of Vrn3 expression (baseDVrn3) at low photoperiods and a maximum rate of Vrn3 expression (maxDVrn3) under long photoperiods.  These two rates are derived internally by the CAMP model from the genotypes FLNparams.      ",
-                      "Name": "Memo",
-                      "ResourceName": null,
-                      "Children": [],
+                      "Children": [
+                        {
+                          "$type": "Models.Functions.XYPairs, Models",
+                          "X": [
+                            0.0,
+                            24.0
+                          ],
+                          "Y": [
+                            410.0,
+                            410.0
+                          ],
+                          "Name": "XYPairs",
+                          "ResourceName": null,
+                          "Children": [],
+                          "Enabled": true,
+                          "ReadOnly": false
+                        },
+                        {
+                          "$type": "Models.Functions.VariableReference, Models",
+                          "VariableName": "[Phenology].Photoperiod",
+                          "Name": "XValue",
+                          "ResourceName": null,
+                          "Children": [],
+                          "Enabled": true,
+                          "ReadOnly": false
+                        }
+                      ],
                       "Enabled": true,
                       "ReadOnly": false
                     }
