@@ -16,4 +16,4 @@ rice=/home/runner/work/ApsimX/ApsimX/Prototypes/Rice/Rice2026
 7z -p"$MAIZE_PASSWORD" x $maize/5x5x5/obs.7z -o$maize/5x5x5
 7z -p"$MAIZE_PASSWORD" x $maize/EarManipulation/obs.7z -o$maize/EarManipulation
 7z -p"$MAIZE_PASSWORD" x $maize/RM/obs.7z -o$maize/RM
-7z -p"$RICE_PASSWORD" x $rice/ObservedRice.7z -o$rice/ObservedRice
+7z -p"$RICE_PASSWORD" x $rice/ObservedRice.7z -o$rice
