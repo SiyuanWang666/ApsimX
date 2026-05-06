@@ -8,7 +8,7 @@ soybean=/home/runner/work/ApsimX/ApsimX/Tests/Validation/Soybean
 cornsoy=/home/runner/work/ApsimX/ApsimX/Tests/Validation/System/FACTS_CornSoy
 swim=/home/runner/work/ApsimX/ApsimX/Tests/Validation/SWIM
 maize=/home/runner/work/ApsimX/ApsimX/Tests/Validation/Maize
-rice=/home/runner/work/ApsimX/ApsimX/Prototypes/Rice
+rice=/home/runner/work/ApsimX/ApsimX/Prototypes/Rice/Rice2026
 
 7z -p"$SOYBEAN_PASSWORD" x $soybean/ObservedFACTS.7z -o$soybean
 7z -p"$CORNSOY_PASSWORD" x $cornsoy/FACTS_CornSoy.7z -o$cornsoy
